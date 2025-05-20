@@ -1,3 +1,4 @@
+// Sandt eller falsk med angst (indeholder da og en)
 const questions = [
     {
       da: "Man ved at angst børn bliver angst voksne",
@@ -40,16 +41,16 @@ const questions = [
       link: "#"
     }
   ];
-  
+  // svar tæller
   let currentIndex = 0;
   let correctCount = 0;
   let currentLang = "da";
-  
+  // start quiz
   function startQuiz() {
     document.getElementById("startView").style.display = "none";
     showQuestion();
   }
-  
+  // selve spørgsmålet
   function showQuestion() {
     document.getElementById("quizView").style.display = "block";
     document.getElementById("feedbackView").style.display = "none";
@@ -62,11 +63,11 @@ const questions = [
     document.getElementById("trueBtn").textContent = currentLang === "da" ? "Sandt" : "True";
     document.getElementById("falseBtn").textContent = currentLang === "da" ? "Falsk" : "False";
   }
-  
+  // SVARET
   function checkAnswer(userAnswer) {
     const q = questions[currentIndex];
     const isCorrect = userAnswer === q.answer;
-  
+  // tilføjer point til rigtige svar
     if (isCorrect) correctCount++;
   
     document.getElementById("quizView").style.display = "none";
@@ -75,7 +76,7 @@ const questions = [
     document.getElementById("answerResult").textContent = isCorrect
       ? (currentLang === "da" ? "Korrekt" : "Correct")
       : (currentLang === "da" ? "Forkert" : "Wrong");
-  
+  // farve på sandt/falsk
     document.getElementById("answerResult").style.color = isCorrect ? "green" : "darkred";
   
     document.getElementById("answerExplanation").textContent =
@@ -83,7 +84,7 @@ const questions = [
   
     document.getElementById("readMore").textContent = currentLang === "da" ? "Læs mere" : "Read more";
     document.getElementById("readMore").href = q.link;
-  
+  // næste myte
     const nextBtn = document.querySelector("#feedbackView .next-btn");
     nextBtn.textContent = currentLang === "da" ? "Næste myte" : "Next myth";
     nextBtn.onclick = nextQuestion;
@@ -97,12 +98,12 @@ const questions = [
       showEndScreen();
     }
   }
-  
+  // SLUTNING AF QUIZZ
   function showEndScreen() {
     document.getElementById("quizView").style.display = "none";
     document.getElementById("feedbackView").style.display = "none";
     document.getElementById("endView").style.display = "block";
-  
+  // færdig og resultat
     const title = currentLang === "da" ? "Quiz færdig!" : "Quiz complete!";
     const text = currentLang === "da"
       ? `Du svarede rigtigt på ${correctCount} ud af ${questions.length} myter.`
@@ -114,7 +115,7 @@ const questions = [
   
     document.querySelector("#endView .next-btn").textContent = currentLang === "da" ? "Prøv igen" : "Try again";
   }
-  
+  // restart quizz
   function restartQuiz() {
     currentIndex = 0;
     correctCount = 0;
@@ -138,7 +139,7 @@ const questions = [
     showCurrentView();
   });
 
-  // Sprogskift
+  // Sprogskifter
   document.getElementById("daBtn").addEventListener("click", () => {
     currentLang = "da";
     updateLanguageButtons();
@@ -155,7 +156,7 @@ const questions = [
     document.querySelectorAll(".lang").forEach(btn => btn.classList.remove("active"));
     document.getElementById(currentLang + "Btn").classList.add("active");
   }
-  
+  // DANSK/ENGELSK forskellige steder
   function showCurrentView() {
     if (document.getElementById("quizView").style.display === "block") {
       showQuestion();

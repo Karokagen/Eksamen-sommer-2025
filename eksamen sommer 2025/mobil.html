@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teknikker mod angst</title>
+  <link rel="stylesheet" href="mobil.css" />
+</head>
+<body>
+  <div class="layout-box">
+    <!-- "Header" som class-->
+    <div class="header-box">
+      <div class="header">
+        <h1 id="title" data-da="Teknikker mod angst" data-en="Techniques against anxiety">
+          Teknikker mod angst
+        </h1>
+        <div class="language-toggle">
+          <button id="btn-da" class="active">Da</button>
+          <button id="btn-en">En</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teknikker Liste (indeholden da og en) -->
+    <div class="teknik-container">
+        <form class="teknik-liste">
+            <label><input type="checkbox" />
+              <span data-da="Træk vejret roligt – Dybe åndedrag beroliger kroppen og sindet."
+                    data-en="Breathe calmly – Deep breaths soothe body and mind.">
+                Træk vejret roligt – Dybe åndedrag beroliger kroppen og sindet.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Husk: Angst er ikke farlig – Følelsen går over igen."
+                    data-en="Remember: Anxiety is not dangerous – The feeling will pass.">
+                Husk: Angst er ikke farlig – Følelsen går over igen.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Ground dig selv – Brug dine sanser til at finde ro."
+                    data-en="Ground yourself – Use your senses to find calm.">
+                Ground dig selv – Brug dine sanser til at finde ro.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Skriv det ned – Tanker virker mindre skræmmende på papir."
+                    data-en="Write it down – Thoughts seem less scary on paper.">
+                Skriv det ned – Tanker virker mindre skræmmende på papir.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Bevæg dig – Gåture eller motion mindsker angst i kroppen."
+                    data-en="Move your body – Walks or exercise reduce anxiety physically.">
+                Bevæg dig – Gåture eller motion mindsker angst i kroppen.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Accepter følelsen – Lad angsten komme og gå som en bølge."
+                    data-en="Accept the feeling – Let the anxiety come and go like a wave.">
+                Accepter følelsen – Lad angsten komme og gå som en bølge.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Tal med nogen – Del dine tanker, du er ikke alene."
+                    data-en="Talk to someone – Share your thoughts, you're not alone.">
+                Tal med nogen – Del dine tanker, du er ikke alene.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Pas på kroppen – Søvn, mad og pauser hjælper meget."
+                    data-en="Take care of your body – Sleep, food and breaks help a lot.">
+                Pas på kroppen – Søvn, mad og pauser hjælper meget.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Brug hjælpemidler – Apps, fidgets eller beroligende lyde kan støtte."
+                    data-en="Use tools – Apps, fidgets or calming sounds can help.">
+                Brug hjælpemidler – Apps, fidgets eller beroligende lyde kan støtte.
+              </span>
+            </label>
+          
+            <label><input type="checkbox" />
+              <span data-da="Gør noget rart – Lyt til musik, se noget sjovt."
+                    data-en="Do something nice – Listen to music, watch something funny.">
+                Gør noget rart – Lyt til musik, se noget sjovt.
+              </span>
+            </label>
+          </form>
+    </div>
+
+   <!-- "FOOTER" som class -->
+<div class="footer-box">
+    <div class="footer">
+      <p>
+        <a href="#" id="openModal"
+           data-da="Rate disse teknikker og giv os dine egne."
+           data-en="Rate these techniques and share your own.">
+          Rate disse teknikker og giv os dine egne.
+        </a>
+      </p>
+    </div>
+  </div>
+  
+  <!-- POPUP vindue-->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close-button">&times;</span>
+      <h2 data-da="Del din oplevelse" data-en="Share your experience">Del din oplevelse</h2>
+      <p data-da="Hvilken teknik hjalp dig mest? Har du selv et godt råd?"
+         data-en="Which technique helped you most? Do you have your own tip?">
+        Hvilken teknik hjalp dig mest? Har du selv et godt råd?
+        <br>(dette er ikke færdig programeret, da jeg valgt at ligge mit fokus andre steder)
+      </p>
+      <textarea placeholder="Skriv her..."></textarea>
+      <button id="submitFeedback" data-da="Send" data-en="Submit">Send</button>
+    </div>
+  </div>
+
+  <script src="mobil.js"></script>
+</body>
+</html>

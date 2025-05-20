@@ -1,0 +1,114 @@
+/* Farve koder for farver i css */
+:root {
+    --black: #212121;
+    --dark: #424246;
+    --white: #f5f5f5;
+    --gray: #bab5b5;
+  }
+  
+/*Main CSS info for side*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Layout container */
+  .layout-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 10px;
+  }
+  
+  /* HEADER(der er i class-form) */
+  .header-box .header-wrapper {
+    background: var(--black);
+    padding: 6px;
+    border-radius: 24px;
+  }
+  
+  .header {
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 18px;
+    padding: 30px 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--black);
+  }
+  
+  /* LINK SECTIONS */
+  .link-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  
+  /* LINK BOXES */
+  .link-box {
+    position: relative;
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 30px 40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    transition: background-color 0.2s;
+  }
+  /* Boks bliver graa når musen er over */
+  .link-box:hover {
+    background-color: var(--gray);
+  }
+  
+  /* Dobbeltramme-effekt */
+  .link-box::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 3px solid var(--white);
+    border-radius: 26px;
+    z-index: -1;
+  }
+  
+  /* FOOTER (der er i class-form)*/
+  .footer-box .footer {
+    background: var(--white);
+    border: 3px solid var(--black);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+  }
