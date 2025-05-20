@@ -1,46 +1,87 @@
 // Sandt eller falsk med angst (indeholder da og en)
+
 const questions = [
-    {
-      da: "Man ved at angst børn bliver angst voksne",
-      en: "We know that anxious children become anxious adults",
-      answer: false,
-      explanation_da: "Det er forholdsvist nemt at behandle angst hos børn.",
-      explanation_en: "Anxiety in children is often treatable and does not always continue into adulthood.",
-      link: "#"
-    },
-    {
-      da: "Angst kan give fysiske symptomer i kroppen",
-      en: "Anxiety can cause physical symptoms in the body",
-      answer: true,
-      explanation_da: "Angst påvirker både kroppen og hjernen – f.eks. hjertebanken og sved.",
-      explanation_en: "Anxiety can cause sweating, rapid heartbeat and muscle tension.",
-      link: "#"
-    },
-    {
-      da: "Man kan ikke få angst som barn",
-      en: "Children cannot experience anxiety",
-      answer: false,
-      explanation_da: "Børn kan sagtens udvikle angst, og det er vigtigt at opdage det tidligt.",
-      explanation_en: "Children can absolutely develop anxiety, and it's important to catch it early.",
-      link: "#"
-    },
-    {
-      da: "Motion kan hjælpe mod angst",
-      en: "Exercise can help reduce anxiety",
-      answer: true,
-      explanation_da: "Motion frigiver endorfiner og kan mindske angstfølelser.",
-      explanation_en: "Exercise releases endorphins and can help reduce anxiety symptoms.",
-      link: "#"
-    },
-    {
-      da: "Angst går altid over af sig selv",
-      en: "Anxiety always goes away on its own",
-      answer: false,
-      explanation_da: "Angst forsvinder sjældent uden støtte eller behandling.",
-      explanation_en: "Anxiety rarely disappears on its own without support or treatment.",
-      link: "#"
-    }
-  ];
+  {
+    da: "Angst kan være arveligt.",
+    en: "Anxiety can be inherited.",
+    answer: true,
+    explanation_da: "Forskning viser, at genetiske faktorer kan øge risikoen for at udvikle angstlidelser.",
+    explanation_en: "Research shows that genetic factors can increase the risk of developing anxiety disorders.",
+    link: "#"
+  },
+  {
+    da: "Børn og unge kan godt få angst.",
+    en: "Children and young people can experience anxiety.",
+    answer: true,
+    explanation_da: "Angst er en af de mest almindelige psykiske lidelser blandt børn og unge.",
+    explanation_en: "Anxiety is one of the most common mental disorders among children and youth.",
+    link: "#"
+  },
+  {
+    da: "Angst er det samme som nervøsitet.",
+    en: "Anxiety is the same as nervousness.",
+    answer: false,
+    explanation_da: "Nervøsitet er en normal reaktion på stress, mens angst er en mere intens og vedvarende tilstand.",
+    explanation_en: "Nervousness is a normal stress response, while anxiety is more intense and persistent.",
+    link: "#"
+  },
+  {
+    da: "Man kan bare tage sig sammen og komme over angst.",
+    en: "You can just pull yourself together and get over anxiety.",
+    answer: false,
+    explanation_da: "Angst er en psykisk lidelse, der ofte kræver professionel behandling.",
+    explanation_en: "Anxiety is a mental disorder that often requires professional treatment.",
+    link: "#"
+  },
+  {
+    da: "Hvis man har angst, har man det hele livet.",
+    en: "If you have anxiety, you'll have it for life.",
+    answer: false,
+    explanation_da: "Med den rette behandling kan mange blive symptomfri eller opleve væsentlig bedring.",
+    explanation_en: "With the right treatment, many people can become symptom-free or improve significantly.",
+    link: "#"
+  },
+  {
+    da: "Motion og søvn kan hjælpe mod angst.",
+    en: "Exercise and sleep can help reduce anxiety.",
+    answer: true,
+    explanation_da: "Regelmæssig fysisk aktivitet og god søvnkvalitet kan reducere symptomer på angst.",
+    explanation_en: "Regular physical activity and good sleep quality can reduce anxiety symptoms.",
+    link: "#"
+  },
+  {
+    da: "Man kan altid se på folk, at de har angst.",
+    en: "You can always tell when someone has anxiety.",
+    answer: false,
+    explanation_da: "Mange med angst skjuler deres symptomer, og det er ikke altid synligt for omgivelserne.",
+    explanation_en: "Many people with anxiety hide their symptoms, and it's not always visible to others.",
+    link: "#"
+  },
+  {
+    da: "Angst er bare en moderne dille.",
+    en: "Anxiety is just a modern trend.",
+    answer: false,
+    explanation_da: "Angstlidelser har eksisteret i lang tid og er anerkendt som alvorlige psykiske lidelser.",
+    explanation_en: "Anxiety disorders have existed for a long time and are recognized as serious mental conditions.",
+    link: "#"
+  },
+  {
+    da: "Angst kan give fysiske symptomer.",
+    en: "Anxiety can cause physical symptoms.",
+    answer: true,
+    explanation_da: "Symptomer som hjertebanken, svedeture og svimmelhed er almindelige ved angst.",
+    explanation_en: "Symptoms such as heart palpitations, sweating and dizziness are common in anxiety.",
+    link: "#"
+  },
+  {
+    da: "Medicinsk behandling er den eneste løsning.",
+    en: "Medication is the only solution.",
+    answer: false,
+    explanation_da: "Terapi, især kognitiv adfærdsterapi, er ofte effektiv, og medicin er ikke altid nødvendig.",
+    explanation_en: "Therapy, especially cognitive behavioral therapy, is often effective and medication is not always necessary.",
+    link: "#"
+  }
+];
   // svar tæller
   let currentIndex = 0;
   let correctCount = 0;
@@ -72,11 +113,10 @@ const questions = [
   
     document.getElementById("quizView").style.display = "none";
     document.getElementById("feedbackView").style.display = "block";
-  
+  // farve på sandt/falsk
     document.getElementById("answerResult").textContent = isCorrect
       ? (currentLang === "da" ? "Korrekt" : "Correct")
       : (currentLang === "da" ? "Forkert" : "Wrong");
-  // farve på sandt/falsk
     document.getElementById("answerResult").style.color = isCorrect ? "green" : "darkred";
   
     document.getElementById("answerExplanation").textContent =
