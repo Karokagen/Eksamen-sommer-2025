@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mytequiz</title>
+  <link rel="stylesheet" href="myter.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="header layout-box">
+    <button id="homeBtn">🏠</button>
+    <div class="language-toggle">
+      <button class="lang active" id="daBtn">Da</button>
+      <button class="lang" id="enBtn">En</button>
+    </div>
+  </div>
+
+  <!-- FORSIDE -->
+  <section class="quiz-container layout-box" id="startView">
+    <h1 id="startTitle">Velkommen til Mytequizzen</h1>
+    <p id="startDesc">Test din viden om angst og opdag, hvad der er sandt eller falsk!</p>
+    <button class="next-btn" onclick="startQuiz()" id="startBtn">Start quiz</button>
+  </section>
+
+  <!-- QUIZ -->
+  <main>
+    <!-- Quizvisning -->
+    <section class="quiz-container layout-box" id="quizView" style="display: none;">
+      <h1 id="questionText"></h1>
+      <div class="answer-buttons">
+        <button class="answer-btn" id="trueBtn" onclick="checkAnswer(true)">Sandt</button>
+        <button class="answer-btn" id="falseBtn" onclick="checkAnswer(false)">Falsk</button>
+      </div>
+    </section>
+
+    <!-- Feedbackvisning -->
+    <section class="quiz-container layout-box" id="feedbackView" style="display: none;">
+      <h2 id="answerResult"></h2>
+      <p id="answerExplanation"></p>
+      <a href="#" id="readMore" target="_blank">Læs mere</a>
+      <button class="next-btn">Næste myte</button>
+    </section>
+
+    <!-- Slutskærm -->
+    <section class="quiz-container layout-box" id="endView" style="display: none;">
+      <h2 id="endTitle">Quiz færdig!</h2>
+      <p id="finalScore"></p>
+      <button class="next-btn" onclick="restartQuiz()">Prøv igen</button>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="footer layout-box">
+    <div id="progress">1/5</div>
+  </div>
+
+  <script src="myter.js"></script>
+</body>
+</html>
