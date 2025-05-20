@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teknikker mod angst</title>
+  <link rel="stylesheet" href="tips.css">
+</head>
+<body>
+  <!-- ALT layout ligger nu i MAIN -->
+  <main class="layout-box">
+    
+    <!-- HEADER INDE I MAIN -->
+    <section class="header-box">
+      <div class="header">
+        <h1>Teknikker mod angst</h1>
+        <div class="language-toggle">
+          <button class="active">Da</button>
+          <button>En</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ / TEKNIK-INFORMATION -->
+    <section class="quiz-container" id="slideContent">
+      <!-- Dynamisk tekst -->
+    </section>
+
+    <!-- QR-KODE -->
+    <section class="qr-section" id="qrSection">
+      <img id="qrImage" src="qr1.png" alt="QR kode">
+      <p>Tag teknikkerne<br>med dig</p>
+    </section>
+
+    <!-- FOOTER INDE I MAIN -->
+    <section class="footer-box">
+      <div class="footer">
+        <div class="nav-buttons">
+          <button id="prevBtn">◀</button>
+          <button id="nextBtn">▶</button>
+        </div>
+        <div class="page-indicator" id="indicator">⬤○○○○○</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+    const techniques = [
+      {
+        text: "Prøv at huske<br>hele teksten til<br>din yndlings sang.",
+        qr: "qr1.png"
+      },
+      {
+        text: "Tæl baglæns fra 100<br>i trin af 7.",
+        qr: "qr2.png"
+      },
+      {
+        text: "Se dig omkring og nævn<br>5 ting du kan se.",
+        qr: "qr3.png"
+      },
+      {
+        text: "Luk øjnene og fokuser<br>på din vejrtrækning.",
+        qr: "qr4.png"
+      },
+      {
+        text: "Navngiv 4 lyde du kan høre<br>lige nu.",
+        qr: "qr5.png"
+      },
+      {
+        text: "Pres dine hænder mod<br>en væg i 10 sekunder.",
+        qr: "qr6.png"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    const slideContent = document.getElementById('slideContent');
+    const qrImage = document.getElementById('qrImage');
+    const indicator = document.getElementById('indicator');
+
+    function updateSlide() {
+      slideContent.innerHTML = `<h2 id="questionText">${techniques[currentIndex].text}</h2>`;
+      qrImage.src = techniques[currentIndex].qr;
+      updateIndicator();
+    }
+
+    function updateIndicator() {
+      indicator.innerHTML = "";
+      for (let i = 0; i < techniques.length; i++) {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (i === currentIndex) dot.classList.add("active");
+        indicator.appendChild(dot);
+      }
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentIndex < techniques.length - 1) {
+        currentIndex++;
+        updateSlide();
+      }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlide();
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
